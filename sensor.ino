@@ -7,6 +7,7 @@ int distance = 0;
 void setup ()
 {
   pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
   
   pinMode(PinoTrigger,OUTPUT);
   pinMode(PinoEcho,INPUT);
@@ -16,6 +17,7 @@ void setup ()
 void loop()
 {
   digitalWrite(13, HIGH);
+  digitalWrite(12, HIGH);
   
   digitalWrite(PinoTrigger, HIGH);
   delayMicroseconds(10);
