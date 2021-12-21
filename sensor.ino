@@ -1,5 +1,5 @@
-#define PinoTrigger 2  
-#define PinoEcho 3      
+#define PinoTrigger 2 // trigger emits pulse
+#define PinoEcho 3 // echo receives the pulse   
 
 int timer = 0;
 int distance = 0;
@@ -27,7 +27,7 @@ void loop()
   delayMicroseconds(10);
   digitalWrite(PinoTrigger,LOW);
   
-  timer = pulseIn(PinoEcho, HIGH); 
+  timer = pulseIn(PinoEcho, HIGH); // stores the read value
   // turning inches into centimeters
   distance = timer*0.017175;
   Serial.println(distance); 
