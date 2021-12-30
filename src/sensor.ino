@@ -19,8 +19,10 @@ void setup ()
 void loop()
 {
   // setting initial state of led lights
-  digitalWrite(13, HIGH); // green
-  digitalWrite(12, LOW); // red
+  if (distance > 21) {
+    digitalWrite(13, HIGH); // green
+    digitalWrite(12, LOW); // red
+  }
 
   // configuring ultrasonic wave
   digitalWrite(PinoTrigger, HIGH);
