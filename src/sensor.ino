@@ -18,12 +18,6 @@ void setup ()
 
 void loop()
 {
-  // setting initial state of led lights
-  if (distance > 21) {
-    digitalWrite(13, HIGH); // green
-    digitalWrite(12, LOW); // red
-  }
-
   // configuring ultrasonic wave
   digitalWrite(PinoTrigger, HIGH);
   delayMicroseconds(10);
@@ -33,6 +27,12 @@ void loop()
   // turning inches into centimeters
   distance = timer*0.017175;
   Serial.println(distance); 
+
+  // setting initial state of led lights
+  if (distance > 21) {
+    digitalWrite(13, HIGH); // green
+    digitalWrite(12, LOW); // red
+  }
 
   // integrating led light with ultrasonic sensor
   if (distance < 20) {
